@@ -1,15 +1,7 @@
-{
-  "name": "franpulse-rsi-puller",
-  "version": "1.0.0",
-  "type": "module",
-  "scripts": {
-    "prep": "npx playwright install --with-deps",
-    "pull": "node src/pull-rsi.js",
-    "pull:one": "node src/pull-rsi.js --tenant",
-    "all": "npm run pull"
-  },
-  "dependencies": {
-    "dotenv": "^16.4.5",
-    "playwright": "^1.47.2"
-  }
+"scripts": {
+  "prep": "npx playwright install chromium",
+  "pull": "node src/pull-rsi.js",
+  "pull:one": "node src/pull-rsi.js --tenant",
+  "check": "node -e \"const {chromium}=require('playwright');(async()=>{const b=await chromium.launch({headless:true,args:['--no-sandbox','--disable-dev-shm-usage']});const c=await b.newContext();const p=await c.newPage();await p.goto('about:blank');await b.close();console.log('ok')})()\"",
+  "all": "npm run pull"
 }
