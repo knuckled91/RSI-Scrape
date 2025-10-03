@@ -162,7 +162,10 @@ async function main() {
 
   await ensureDir(DATA_DIR);
 
-  const browser = await chromium.launch({ headless: true });
+  const browser = await chromium.launch({
+  headless: true,
+  args: ['--no-sandbox', '--disable-dev-shm-usage'] // friendly for locked-down environments
+});
 
   for (const cfg of runCfgs) {
     try {
