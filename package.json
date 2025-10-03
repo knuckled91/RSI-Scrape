@@ -1,0 +1,15 @@
+{
+  "name": "franpulse-rsi-puller",
+  "version": "1.0.0",
+  "type": "module",
+  "scripts": {
+    "prep": "npx playwright install --with-deps",
+    "pull": "node src/pull-rsi.js",
+    "pull:one": "node src/pull-rsi.js --tenant",
+    "all": "npm run pull"
+  },
+  "dependencies": {
+    "dotenv": "^16.4.5",
+    "playwright": "^1.47.2"
+  }
+}
