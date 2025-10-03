@@ -1,0 +1,17 @@
+[
+  {
+    "id": "default-tenant",
+    "friendlyName": "Lone Star Restaurnats",
+    "baseUrlEnv": "https://www.rsiweb.com/Net/Public/PubIndex.aspx",
+    "reports": [
+      {
+        "name": "SalesByDaypart",
+        "path": "/reports/sales/daypart",
+        "exportButton": "text=Download",
+        "startInput": "#startDate",
+        "endInput": "#endDate",
+        "presetLast12Selector": "text=Last 12 Months"
+      }
+    ]
+  }
+]
